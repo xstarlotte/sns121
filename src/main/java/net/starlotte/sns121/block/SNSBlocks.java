@@ -22,6 +22,7 @@ import java.util.function.Supplier;
 
 public class SNSBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SNS121.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SNS121.MOD_ID);
 
     //HERB
     public static final RegistryObject<Block> CANDY_CANE_BRICKS = registerBlock("candy_cane_bricks", () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
@@ -48,8 +49,9 @@ public class SNSBlocks {
     public static final RegistryObject<Block> CANDY_CANE_STONE_COAL_ORE = registerBlock("candy_cane_stone_coal_ore", () -> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
 
-    public static final RegistryObject<Block> CANDY_CANE_TORCH = registerBlock("candy_cane_torch", () -> new TorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH)));
-    public static final RegistryObject<Block> CANDY_CANE_WALL_TORCH = registerBlock("candy_cane_wall_torch", () -> new WallTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH)));
+    public static final RegistryObject<Item> CANDY_CANE_TORCH_ITEM = ITEMS.register("candy_cane_torch", () -> new StandingAndWallBlockItem(SNSBlocks.CANDY_CANE_TORCH.get(), SNSBlocks.CANDY_CANE_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Block> CANDY_CANE_TORCH = BLOCKS.register("candy_cane_torch", () -> new TorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH)));
+    public static final RegistryObject<Block> CANDY_CANE_WALL_TORCH = BLOCKS.register("candy_cane_wall_torch", () -> new WallTorchBlock(ParticleTypes.FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH)));
 
 
 
@@ -138,7 +140,10 @@ public class SNSBlocks {
 
 
 
-
+    private static <T extends Block> RegistryObject<Item> registerStandingAndWallBlockItem(String name, RegistryObject<Block> floor_block, RegistryObject<Block> wall_block)
+    {
+        return ITEMS.register(name, () -> new StandingAndWallBlockItem(floor_block.get(), wall_block.get(), new Item.Properties(), Direction.DOWN ));
+    }
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -153,6 +158,8 @@ public class SNSBlocks {
 
 
     public static void register(IEventBus eventBus) {
+
         BLOCKS.register(eventBus);
+        ITEMS.register(eventBus);
     }
 }

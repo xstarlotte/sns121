@@ -1,5 +1,7 @@
 {
 
+  "block.sns121.candy_cane_torch": "Candy Cane Torch",
+
   "block.sns121.candy_cane_bricks": "Candy Cane Bricks",
   "block.sns121.candy_cane_brick_button": "Candy Cane Brick Button",
   "block.sns121.candy_cane_brick_door": "Candy Cane Brick Door",
@@ -96,6 +98,9 @@
   "item.sns121.mint_humbug": "Mint Humbug",
   "item.sns121.peppermint_swirl": "Peppermint Swirl",
   "item.sns121.toothpaste": "Toothpaste",
+
+  "item.sns121.candy_cane_hoe": "Candy Cane Hoe",
+  "item.sns121.candy_cane_sword": "Candy Cane Sword",
 
   "creativetab.herb_sns": "Herbs - Sweet Not Savoury"
 }

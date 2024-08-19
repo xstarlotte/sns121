@@ -16,6 +16,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.starlotte.sns121.block.SNSBlocks;
 import net.minecraftforge.registries.RegistryObject;
+import net.starlotte.sns121.item.SNSItems;
 
 import java.util.Set;
 
@@ -28,6 +29,10 @@ public class SNSBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
 
         //HERB
+
+        dropSelf(SNSBlocks.CANDY_CANE_TORCH.get());
+        dropSelf(SNSBlocks.CANDY_CANE_WALL_TORCH.get());
+
         dropSelf(SNSBlocks.CANDY_CANE_BRICKS.get());
         this.dropSelf(SNSBlocks.CANDY_CANE_BRICK_BUTTON.get());
         this.add(SNSBlocks.CANDY_CANE_BRICK_DOOR.get(), block -> createDoorTable(SNSBlocks.CANDY_CANE_BRICK_DOOR.get()));
@@ -50,9 +55,7 @@ public class SNSBlockLootTables extends BlockLootSubProvider {
         dropSelf(SNSBlocks.CANDY_CANE_STONE_TRAPDOOR.get());
         dropSelf(SNSBlocks.CANDY_CANE_STONE_WALL.get());
 
-        //===================================================
-        this.dropSelf(SNSBlocks.CANDY_CANE_TORCH.get());
-        this.dropSelf(SNSBlocks.CANDY_CANE_WALL_TORCH.get());
+
 
         dropSelf(SNSBlocks.MINT_BLOCK.get());
         this.dropSelf(SNSBlocks.MINT_BUTTON.get());

@@ -3,6 +3,7 @@ package net.starlotte.sns121.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -26,6 +27,9 @@ public class SNSItemModelProvider extends ItemModelProvider {
         basicItem(SNSItems.MINT_HUMBUG.get());
         basicItem(SNSItems.PEPPERMINT_SWIRL.get());
         basicItem(SNSItems.TOOTHPASTE.get());
+
+        handheldItem(SNSItems.CANDY_CANE_HOE);
+        handheldItem(SNSItems.CANDY_CANE_SWORD);
 
         buttonItem(SNSBlocks.CANDY_CANE_BRICK_BUTTON, SNSBlocks.CANDY_CANE_BRICKS);
         simpleBlockItem(SNSBlocks.CANDY_CANE_BRICK_DOOR);
@@ -89,7 +93,11 @@ public class SNSItemModelProvider extends ItemModelProvider {
                         "block/" + ForgeRegistries.BLOCKS.getKey(baseBlock.get()).getPath()));
     }
 
-
+    private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(SNS121.MOD_ID,"item/" + item.getId().getPath()));
+    }
 
     private ItemModelBuilder simpleTorch(RegistryObject<Block> block) {
         return withExistingParent(block.getId().getPath(),

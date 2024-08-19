@@ -35,10 +35,35 @@ public class SNSRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("C  ")
                 .define('C', SNSItems.CANDY_CANE_SUGAR.get())
                 .unlockedBy("has_candy_cane_sugar", has(SNSItems.CANDY_CANE_SUGAR.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItems.CANDY_CANE_HOE.get())
+                .pattern(" SS")
+                .pattern(" C ")
+                .pattern("C  ")
+                .define('C', SNSItems.CANDY_CANE.get())
+                .define('S', SNSItems.CANDY_CANE_SUGAR.get())
+                .unlockedBy("has_candy_cane", has(SNSItems.CANDY_CANE.get())).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItems.CANDY_CANE_SWORD.get())
+                .pattern(" S ")
+                .pattern(" S ")
+                .pattern(" C ")
+                .define('C', SNSItems.CANDY_CANE.get())
+                .define('S', SNSItems.CANDY_CANE_SUGAR.get())
+                .unlockedBy("has_candy_cane", has(SNSItems.CANDY_CANE.get())).save(recipeOutput);
+
+
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSItems.PEPPERMINT_SWIRL.get())
                 .pattern("CCC")
                 .pattern("C C")
                 .pattern("CCC")
+                .define('C', SNSItems.CANDY_CANE_SUGAR.get())
+                .unlockedBy("has_candy_cane_sugar", has(SNSItems.CANDY_CANE_SUGAR.get())).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, SNSBlocks.CANDY_CANE_TORCH.get())
+                .pattern("O")
+                .pattern("C")
+                .pattern("C")
+                .define('O', Items.COAL)
                 .define('C', SNSItems.CANDY_CANE_SUGAR.get())
                 .unlockedBy("has_candy_cane_sugar", has(SNSItems.CANDY_CANE_SUGAR.get())).save(recipeOutput);
 

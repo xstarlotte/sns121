@@ -42,9 +42,8 @@ public class SNSTabs {
                         output.accept(SNSBlocks.CANDY_CANE_STONE_TRAPDOOR.get());
                         output.accept(SNSBlocks.CANDY_CANE_STONE_WALL.get());
 
-                        //========================================================
+
                         output.accept(SNSBlocks.CANDY_CANE_TORCH.get());
-                        output.accept(SNSBlocks.CANDY_CANE_WALL_TORCH.get());
 
                         output.accept(SNSBlocks.CANDY_CANE_STONE_COAL_ORE.get());
 
@@ -128,6 +127,10 @@ public class SNSTabs {
                         output.accept(SNSItems.MINT_HUMBUG.get());
                         output.accept(SNSItems.PEPPERMINT_SWIRL.get());
                         output.accept(SNSItems.TOOTHPASTE.get());
+
+
+                        output.accept(SNSItems.CANDY_CANE_HOE.get());
+                        output.accept(SNSItems.CANDY_CANE_SWORD.get());
 
                     }).build());
 

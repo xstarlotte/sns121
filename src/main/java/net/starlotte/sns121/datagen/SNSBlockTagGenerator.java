@@ -7,6 +7,7 @@ import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.starlotte.sns121.SNS121;
 import net.starlotte.sns121.block.SNSBlocks;
+import net.starlotte.sns121.util.SNSTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -110,6 +111,11 @@ public class SNSBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.WALLS).add(SNSBlocks.MINT_HUMBUG_BRICK_WALL.get());
         this.tag(BlockTags.WALLS).add(SNSBlocks.TOOTHPASTE_WALL.get());
         this.tag(BlockTags.WALLS).add(SNSBlocks.TOOTHPASTE_BRICK_WALL.get());
+
+        this.tag(SNSTags.Blocks.PAXEL_MINEABLE)
+                .addTag(BlockTags.MINEABLE_WITH_AXE)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL);
 
     }
 

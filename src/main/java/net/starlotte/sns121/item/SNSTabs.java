@@ -130,6 +130,7 @@ public class SNSTabs {
 
 
                         output.accept(SNSItems.CANDY_CANE_HOE.get());
+                        output.accept(SNSItems.CANDY_CANE_PAXEL.get());
                         output.accept(SNSItems.CANDY_CANE_SWORD.get());
 
                     }).build());

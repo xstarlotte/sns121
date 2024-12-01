@@ -29,6 +29,7 @@ public class SNSItemModelProvider extends ItemModelProvider {
         basicItem(SNSItems.TOOTHPASTE.get());
 
         handheldItem(SNSItems.CANDY_CANE_HOE);
+        handheldItem(SNSItems.CANDY_CANE_PAXEL);
         handheldItem(SNSItems.CANDY_CANE_SWORD);
 
         buttonItem(SNSBlocks.CANDY_CANE_BRICK_BUTTON, SNSBlocks.CANDY_CANE_BRICKS);

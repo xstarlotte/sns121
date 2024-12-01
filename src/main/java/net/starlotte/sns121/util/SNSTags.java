@@ -14,6 +14,8 @@ public class SNSTags {
         public static final TagKey<Block> NEEDS_HERB_TOOL = createTag("needs_herb_tool");
         public static final TagKey<Block> INCORRECT_FOR_HERB_TOOL = createTag("incorrect_for_herb_tool");
 
+        public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(SNS121.MOD_ID, name));
         }

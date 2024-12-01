@@ -15,6 +15,7 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.starlotte.sns121.block.SNSBlocks;
+import net.starlotte.sns121.effect.SNSEffects;
 import net.starlotte.sns121.item.SNSItems;
 import net.starlotte.sns121.item.SNSTabs;
 import org.slf4j.Logger;
@@ -34,6 +35,7 @@ public class SNS121 {
         modEventBus.addListener(this::commonSetup);
 
         SNSBlocks.register(modEventBus);
+        SNSEffects.register(modEventBus);
         SNSItems.register(modEventBus);
         SNSTabs.register(modEventBus);
 
